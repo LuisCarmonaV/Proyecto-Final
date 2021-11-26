@@ -1,0 +1,216 @@
+%########################################
+% Template in latex for classroom assignments and project report
+% 
+%
+% Author: Luis Carmona
+%
+% Use xelatex compiler 
+%########################################
+
+
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt,oneside,fleqn]{article}
+
+
+% Often used text to commands
+\newcommand{\clr}{gray!60}
+\newcommand{\gray}{\textcolor{gray!60}}
+\newcommand{\maintitle}{Proyecto Final}
+\newcommand{\subject}{Métodos Numéricos}
+
+\newcommand{\nombre}{Luis Adrián Carmona Villalobos}
+\newcommand{\mat}{A01748395}
+\newcommand{\class}{\gray {Métodos Numéricos}}
+\newcommand{\hw}{\gray {Proyecto Final}}
+
+
+
+% All packages
+\usepackage{amssymb,amsthm,amsmath,enumerate,fancyhdr,graphicx,tabularx}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{mathpazo}
+\usepackage{mdframed}
+\usepackage{parskip}
+\usepackage{fontspec} 
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{lipsum}  % generates filler text
+\linespread{1.1} 
+
+
+% FONTS
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Monaco}
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+%\setmonofont{Inconsolata}
+
+
+% Environment for Solution definition
+\newenvironment{solution}[1]
+{\textbf{\textsc{Tabla de algoritmos: }}\\}
+
+
+% header and footer content
+\pagestyle{fancy}
+\lhead{\hw {\hwnumber}}
+\chead{}
+\rhead{\class}
+\cfoot{}
+
+
+% Header line with color gray!60
+\renewcommand{\headrulewidth}{0.0pt}% 2pt header rule
+\setlength{\headsep}{1.5cm}
+
+
+\pgfplotsset{compat=1.16}
+% Document 
+\begin{document}
+    % No header for the first page
+    \thispagestyle{empty}
+	% Intro Page Starts
+	
+	\begin{figure}
+		\vspace{5pt}
+		\centering
+		\includegraphics[width=9cm, height=9cm]{./Logo/logo_tec.jpg} \\
+		\vspace{25pt}
+	\end{figure}
+
+	
+	\centering
+	{
+	\huge \maintitle\\
+	\huge \subject\\
+	\vspace{20pt}
+	\textcolor{black!80}{
+    \large \nombre \; \mat\\
+	\vspace{100pt}
+	25 de noviembre de 2021
+	}
+
+	}
+	\newpage
+	% Define foot name after intro page
+	%\lfoot{\gray \name}
+	\rfoot{\thepage}
+	% Intro Page Ends
+
+\section{Introducción}
+\begin{abstract}
+    Los modelos de regresión lineal son relativamente sencillos y proporcionan una fórmula matemática fácil de interpretar que puede generar predicciones ademas los modelos de regresión lineal se han convertido en una forma comprobada de predecir el futuro de forma científica y confiable.\\\vspace{5pt}
+    
+
+\end{abstract}
+
+\section{ Descripcion del problema a resolver}
+    Las imágenes de drones nos permite tener ortofotos de terrenos y modelos de elevación.
+
+En los estudios de recursos hídricos y medioambiente, los modelos de elevación y ortofotos generados del procesamiento de imágenes de drones, son de particular interés para determinar las principales características del terreno relacionado con los flujos de aguas superficiales  o subterráneas y la interacción con el ecosistema, pero estás imágenes necesitan estar a escala regional (>1 Km2).
+
+ Se ha realizado un análisis recursivo sobre un conjunto de fotos aéreas en una computadora estándar para tener un panorama de las tasa y tendencias de la operación de OpenDroneMap(aplicación para el procesamiento de imágenes) de drones para procesar diferentes cantidades de imágenes. Aunque las tasas y tendencias se aplican solo a un conjunto de datos y una especifica configuración de una computadora, este estudio puede tomarse como referencia  evaluar el tiempo de cómputo y de cómo funciona el software con gran cantidad de datos.
+ 
+ Datos de entrada
+El conjunto de datos provienen de dos vuelos que dan un total de 531 imágenes que fueron divididas en subgrupos de 150 imágenes. El conjunto de datos pesan 2.8 GB donde el tamaño de cada imagen es de 5.6 - 6.0 MB.
+
+ En la siguiente figura se muestra una vista previa de la ubicación espacial de la cámara del dron y la ortofoto resultante para un grupo de 100 imágenes y para el conjunto total (531 imágenes).
+ 
+ 
+ \begin{figure}[h!]
+		\vspace{5pt}
+		\centering
+		\includegraphics[scale = .50]{./Logo/100images.png} \\
+		\caption{100 imagenes}
+	\end{figure}
+	
+
+ \begin{figure}[h!]
+		\vspace{5pt}
+		\centering
+		\includegraphics[scale = .50]{./Logo/531images.png} \\
+		\caption{500 imagenes}
+	\end{figure}
+ 
+%\vspace{5pt}Cada resistor requiere de tres unidades de cobre, tres de zinc y una unidad de vidrio. Cada chip de computadora requiere de dos, una y tres unidades de materiales, respectivamente. Los suministros de materiales varian cada semana por lo que se requiere determinar producción diferente cada semana.\\
+
+\section{Resultados}
+El tiempo de inicio y final del procesamiento de OpenDroneMap fue registrado y procesado con Python. En la siguiente tabla se muestra los tiempos de cálculo, cantidad  y  tamaños de las imágenes procesadas.
+
+El tiempo de simulación varía desde 0.4 horas para 50 imágenes con un tamaño total de 290 MB hasta 5.47 horas para 500 imágenes con un tamaño total de 2890 MB. Se realizó un análisis de regresión lineal para el conjunto de resultados, en la siguiente figura se muestra  el número de imagen vs. el tiempo computacional  con la línea de tendencia y ecuación de regresión lineal.
+
+
+
+    \begin{figure}[h!]
+	    	\vspace{5pt}
+	    	\centering
+    		\includegraphics[scale = .50]{./Logo/linearR1.png} \\
+    		\caption{línea de tendencia}
+    	\end{figure}
+	
+Se hicieron los análisis en Matlab y Excel, estos fueron los resultados a continuación:
+
+    \begin{figure}[h!]
+		    \vspace{5pt}
+		    \centering
+	    	\includegraphics[scale = .50]{./Logo/matlabreg1.png} \\
+	    	\caption{Matlab regresión lineal}
+    	\end{figure}
+    	
+    \begin{figure}[h!]
+		    \vspace{5pt}
+		    \centering
+	    	\includegraphics[scale = .50]{./Logo/matlabreg2.png} \\
+	    	\caption{Matlab regresión lineal}
+    	\end{figure}
+
+    \begin{figure}[h!]
+		    \vspace{5pt}
+		    \centering
+	    	\includegraphics[scale = .50]{./Logo/linealExcel.png} \\
+	    	\caption{Excel regresión lineal}
+    	\end{figure}
+
+    \begin{table}[H]\centering
+        %\scriptsize
+        \begin{tabular}{lrrr}
+        \multicolumn{3}{c}{Análisis de Rendimiento} \\
+    Lapso de tiempo &Número de imagen &Total del tamaño(Mb) \\\midrule
+    0.40 &50.0 &290 \\
+    0.79 &100.0 &579.0 \\
+    1.22 &150.0 &869.0 \\
+    1.77 &200.0 &1162.0 \\
+    2.18 &250.0 &1460.0\\
+    2.74 &300.0 &1753.0\\
+    3.30& 350.0 &2044.0\\
+    3.95& 400.0 &2325.0\\
+    4.62 &450.0 &2608.0\\
+    6.19 &550.0 &3064.0\\
+   % \bottomrule
+    \end{tabular}
+    \end{table}
+	
+	
+	
+ 	\section{Conclusiones}
+ 	
+ 	 Los analisis hechos tanto por Matlab y por Excel muestran un R de 0.99 por lo que son datos muy precisos para usar.
+ 	 
+ 	 Se puede colcluir que el tiempo de cálculo no tiene una relación lineal con el número de imágenes. La gran cantidad de imágenes tarda más tiempo en procesarse que la tendencia lineal. El progama de OpneDroneMap procesa mejor las imagenes en tiempo cuando se realiza el análisis por agrupación de las imagenes por ubicación.
+ 	 
+ 	
+
+ 	 
+\end{document}
+
