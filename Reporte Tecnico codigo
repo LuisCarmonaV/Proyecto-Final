@@ -204,13 +204,14 @@ Se hicieron los análisis en Matlab y Excel, estos fueron los resultados a conti
 	
 	
  	\section{Conclusiones}
- 	
+
  	 Los analisis hechos tanto por Matlab y por Excel muestran un R de 0.99 por lo que son datos muy precisos para usar.
  	 
  	 Se puede colcluir que el tiempo de cálculo no tiene una relación lineal con el número de imágenes. La gran cantidad de imágenes tarda más tiempo en procesarse que la tendencia lineal. El progama de OpneDroneMap procesa mejor las imagenes en tiempo cuando se realiza el análisis por agrupación de las imagenes por ubicación.
+ 	 
+ 	 La finalidad de este proyecto es ver las tasa de aumento en relación al promedio de imagenes tomadas, por lo que se ve que es el procesamiento en stacks de imagenes es mas eficiente en cuanto a tiempo y espacio generado.
  	 
  	
 
  	 
 \end{document}
-
