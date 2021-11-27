@@ -1,0 +1,90 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\usefonttheme{structurebold} %todos los titulos los formatea en letra negritas
+%otras fuentes: serif, professionalfonts
+
+%presentaciones largas
+%\AtBeginSection[]{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection]
+%\end{frame}
+%}
+
+%[] titulo, nombre tec.. corto
+\title[Proyecto Final]{Análisis de Rendimiento para el Procesamiento de cientos de Imágenes Drones con Regresión Lineal}
+\author[Luis Carmona]{Luis Adrian Carmona Villalobos A01748395\inst{1}}
+\date[Tecnológico de Monterrey]{Métodos Numéricos }
+\institute[]{\inst{1}Instituto Tecnológico y de Estudios Superiores de Monterrey}
+
+\logo{\includegraphics[height=1cm]{tecmini.png}}
+\begin{document}
+
+\begin{frame} %slides, diapositivas, este fue creado para titulo personalizado, si es largo de varios elementos se usa el begin frame 
+\includegraphics[height=5em]{logo_tec.jpg}
+\maketitle % por omision genera un frame(diapositiva)
+\end{frame}
+presentaciones cortas
+\begin{frame}{Contenido}
+\tableofcontents%[pausesections]
+\end{frame}
+
+\section{Introduction}
+%cada vez que queremos un nuevo slide, una instancia del entorno
+\begin{frame}
+\frametitle{Introducción}  %macro
+%\centering %centrar tambien horizontal
+Los modelos de regresión lineal son relativamente sencillos y proporcionan una fórmula matemática fácil de interpretar que puede generar predicciones ademas los modelos de regresión lineal se han convertido en una forma comprobada de predecir el futuro de forma científica y confiable.
+
+\includegraphics[height=8cm]{fullimagenes.jpg}
+\end{frame}
+
+\section{Descripción del problema a resolverDescripción del problema a resolver}
+\begin{frame}
+\frametitle{ Descripción del problema a resolver}  
+ Análisis recursivo sobre un conjunto de fotos aéreas en una computadora estándar para tener un panorama de las tasa y tendencias de la operación de OpenDroneMap(aplicación para el procesamiento de imágenes) de drones para procesar diferentes cantidades de imágenes. Aunque las tasas y tendencias se aplican solo a un conjunto de datos y una especifica configuración de una computadora, este estudio puede tomarse como referencia  evaluar el tiempo de cómputo y de cómo funciona el software con gran cantidad de datos.
+ \vspace{}
+\includegraphics[height=2cm]{100images}
+\includegraphics[height=2cm]{531images}
+
+\end{frame}
+
+\section{Resultados}
+\begin{frame}
+\frametitle{ Resultados}  
+SEl tiempo de simulación varía desde 0.4 horas para 50 imágenes con un tamaño total de 290 MB hasta 5.47 horas para 500 imágenes con un tamaño total de 2890 MB. Se realizó un análisis de regresión lineal para el conjunto de resultados, en la siguiente figura se muestra  el número de imagen vs. el tiempo computacional  con la línea de tendencia y ecuación de regresión lineal.
+
+Se puede colcluir que el tiempo de cálculo no tiene una relación lineal con el número de imágenes. La gran cantidad de imágenes tarda más tiempo en procesarse que la tendencia lineal. El progama de OpneDroneMap procesa mejor las imagenes en tiempo cuando se realiza el análisis por agrupación de las imagenes por ubicación.
+\end{frame}
+
+\begin{frame}{Tabla y graficos}
+
+\begin{table}[H]\centering
+        %\scriptsize
+        \begin{tabular}{lrrr}
+        \multicolumn{3}{c}{Análisis de Rendimiento} \\
+    Lapso de tiempo &Número de imagen &Total del tamaño(Mb) \\\midrule
+    0.40 &50.0 &290 \\
+    0.79 &100.0 &579.0 \\
+    1.22 &150.0 &869.0 \\
+    1.77 &200.0 &1162.0 \\
+    2.18 &250.0 &1460.0\\
+    2.74 &300.0 &1753.0\\
+    3.30& 350.0 &2044.0\\
+    3.95& 400.0 &2325.0\\
+    4.62 &450.0 &2608.0\\
+    6.19 &550.0 &3064.0\\
+   % \bottomrule
+    \end{tabular}
+    \end{table}
+ 
+ \includegraphics[height=2.5cm]{matlabreg1.png}
+ \includegraphics[height=2.5cm]{matlabreg2.png}
+ \includegraphics[height=2.5cm]{linealExcel.png}
+    
+    
+    
+\end{frame}
+
+\end{document}
