@@ -56,8 +56,11 @@ Los modelos de regresión lineal son relativamente sencillos y proporcionan una 
 SEl tiempo de simulación varía desde 0.4 horas para 50 imágenes con un tamaño total de 290 MB hasta 5.47 horas para 500 imágenes con un tamaño total de 2890 MB. Se realizó un análisis de regresión lineal para el conjunto de resultados, en la siguiente figura se muestra  el número de imagen vs. el tiempo computacional  con la línea de tendencia y ecuación de regresión lineal.
 
 Se puede colcluir que el tiempo de cálculo no tiene una relación lineal con el número de imágenes. La gran cantidad de imágenes tarda más tiempo en procesarse que la tendencia lineal. El progama de OpneDroneMap procesa mejor las imagenes en tiempo cuando se realiza el análisis por agrupación de las imagenes por ubicación.
+
+\includegraphics[height=2.5cm]{lineaa.png}\centering
 \end{frame}
 
+\section{Resultados}
 \begin{frame}{Tabla y graficos}
 
 \begin{table}[H]\centering
